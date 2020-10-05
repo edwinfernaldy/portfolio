@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edwin</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+	<script src="https://unpkg.com/css-doodle@0.8.5/css-doodle.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<style>
+		body{
+   		 	margin:0px;
+   		 	background-color:black;
+   		 	padding:0;
+			overflow-x: hidden;
+			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+		}
+		.textintro{
+			text-align:left;
+			font-size:1.5rem;
+			letter-spacing:2px;
+		}
+		.jumbotron{
+			filter:saturate(20%);
+			background: rgba(0,0,0, .5);
+			background-image: url('Assets/edwin.jpg');
+
+			transition: 4s linear;
+			height:80rem;
+			background-position:0px -400px;
+			background-repeat:no-repeat;
+			margin-bottom:0;
+			background-size:cover;
+			background-attachment:fixed;
+		}
+		.display-4{
+			letter-spacing:3px;
+			text-shadow:3px 2px black;
+		}
+		.section1{
+			text-align:center;
+			color:white;
+			letter-spacing:3rem;
+			font-size:5rem;
+			font-weight:lighter;
+			text-shadow:2px 2px black;
+			display:block;
+		}
+
+
+
+		
+		/* 
+		--- */
+
+		.overlay{
+			z-index:999;
+			width:100%;
+			height:100vh;
+			position:absolute;
+			display:flex;
+			top:0;
+			left:0;
+		}
+		.layer{
+			background-color:pink;
+			font-size:5rem;
+			color:whitesmoke;
+			text-shadow:1.5rem 1rem black;
+		}
+		.layer1{
+			flex:1;
+		}
+		.layer2{
+			flex:1;
+		}
+		.layer3{
+			flex:1;
+		}
+		.layer4{
+			flex:1;
+		}
+		.layer5{
+			flex:1;
+		}
+		.layer6{
+			flex:1;
+		}
+		.layer7{
+			flex:1;
+		}
+		.layer8{
+			flex:1;
+		}
+		.layer9{
+			flex:1;
+		}
+		.abu{
+			margin-bottom:-200rem;
+			height:200rem;
+			width:100%;
+			background-color: black;
+			text-align:center;
+			font-size:5rem;
+		}
+		.blance{
+			margin-bottom:-200rem;
+			height:200rem;
+			width:100%;
+			background-color:blanchedalmond;
+			text-align:center;
+		}
+		.item{
+			margin-bottom:-150rem;
+			height:150rem;
+			width:100%;
+			background-color:black;
+			text-align:center;
+		}
+		.section2{
+			padding-top:15rem;
+			text-align:center;
+			display:flex;
+			background:pink;
+			padding-bottom:15rem;
+			
+		}
+		.kotak img{
+			padding-left:2rem;
+			max-width:30rem;
+		}
+		.pro1{
+			text-align:center;
+			border-radius:30%;
+  			box-shadow: 5px 10px 20px gray;
+			background-image:url("Assets/full hitam (kalo butuh tapi kayaknya enggak).png");
+			background-color:white;
+			background-size: contain;
+    		background-repeat: no-repeat;
+			width:20rem;
+			height:20rem;
+            margin-left:10%;
+            cursor:pointer;
+		}
+		.pro2{
+			text-align:center;
+			border-radius:30%;
+  			box-shadow: 5px 10px 20px gray;
+			background-image:url("Assets/logo.png");
+			background-size:cover;
+			background-repeat:round;
+			width:20rem;
+			padding:5rem;
+			min-height:20rem;
+			margin-left:10%;
+            cursor:pointer;
+		}
+
+
+
+		.pro3{
+			text-align:center;
+			border-radius:30%;
+  			box-shadow: 15px 10px 20px gray;
+			background-image:url("Assets/amsol.jpg");
+			background-size: contain;
+    		background-repeat: no-repeat;
+			width:20rem;
+			height:20rem;
+            margin-left:10%;
+            cursor:pointer;
+		}		
+
+		
+		.threeD {
+			z-index:999;
+		left:50%;
+		color: white;
+		white-space: nowrap;
+		position: absolute;
+		transform: translate(-50%, -50%);
+		font-size: 3em;
+		font-family: sans-serif;
+		letter-spacing: 0.1em;
+		transition: 0.3s;
+		text-shadow: 1px 1px 0 grey, 1px 2px 0 grey, 1px 3px 0 grey, 1px 4px 0 grey,
+			1px 5px 0 grey, 1px 6px 0 grey, 1px 7px 0 grey, 1px 8px 0 grey,
+			5px 13px 15px black;
+		}
+
+		.threeD:hover {
+		transition: 0.3s;
+		transform: scale(1.1)translate(-50%, -50%);
+		text-shadow: 1px -1px 0 grey, 1px -2px 0 grey, 1px -3px 0 grey,
+			1px -4px 0 grey, 1px -5px 0 grey, 1px -6px 0 grey, 1px -7px 0 grey,
+			1px -8px 0 grey, 5px -13px 15px black, 5px -13px 25px #808080;
+		}
+
+		#fotoewin{
+			transition: transform .5s;
+			filter:grayscale(80%);
+		}
+		#fotoewin:hover{
+			transform: scale(1.2);
+			border-radius:20% 10%;
+			filter:grayscale(10%);
+			z-index:999;
+		}
+
+		.footer{
+			background-color:pink;
+			display:flex;
+			justify-content: space-between;
+			text-align:center;
+			padding-bottom:5rem;
+
+		}
+
+		
+		ul {
+		border-radius:20px;
+		border:10px solid white;
+		display:flex;
+		margin-top:15%;
+		transform:translate(-50%, -50%);
+		}
+
+		ul li {
+		list-style:none;
+		margin:0 5px;
+		}
+
+		ul li a .fa {
+		font-size: 40px;
+		color: #262626;
+		line-height:80px;
+		transition: .5s;
+		padding-right: 14px;
+		}
+
+		ul li a span {
+		padding:0;
+		margin:0;
+		position:absolute;
+		top: 30px;
+		color: #262626;
+		letter-spacing: 4px;
+		transition: .5s;
+		}
+
+		ul li a {
+		text-decoration: none;
+		display:absolute;
+		display:block;
+		width:210px;
+		height:80px;
+		background: #fff;
+		text-align:left;
+		padding-left: 20px;
+		transform: rotate(-30deg) skew(25deg) translate(0,0);
+		transition:.5s;
+		box-shadow: -20px 20px 10px rgba(0,0,0,.5);
+		}
+		ul li a:before {
+		content: '';
+		position: absolute;
+		top:10px;
+		left:-20px;
+		height:100%;
+		width:20px;
+		background: #b1b1b1;
+		transform: .5s;
+		transform: rotate(0deg) skewY(-45deg);
+		}
+		ul li a:after {
+		content: '';
+		position: absolute;
+		bottom:-20px;
+		left:-10px;
+		height:20px;
+		width:100%;
+		background: #b1b1b1;
+		transform: .5s;
+		transform: rotate(0deg) skewX(-45deg);
+		}
+
+		ul li a:hover {
+		transform: rotate(-30deg) skew(25deg) translate(20px,-15px);
+		box-shadow: -50px 50px 50px rgba(0,0,0,.5);
+		}
+
+		ul li:hover .fa {
+		color:#fff;
+		}
+
+		ul li:hover span {
+		color:#fff;
+		}
+
+		ul li:hover:nth-child(1) a{
+		background: #3b5998;
+		}
+		ul li:hover:nth-child(1) a:before{
+		background: #365492;
+		}
+		ul li:hover:nth-child(1) a:after{
+		background: #4a69ad;
+		}
+
+		ul li:hover:nth-child(2) a{
+		background: #00aced;
+		}
+		ul li:hover:nth-child(2) a:before{
+		background: #097aa5;
+		}
+		ul li:hover:nth-child(2) a:after{
+		background: #53b9e0;
+		}
+
+		ul li:hover:nth-child(3) a{
+		background: #dd4b39;
+		}
+		ul li:hover:nth-child(3) a:before{
+		background: #b33a2b;
+		}
+		ul li:hover:nth-child(3) a:after{
+		background: #e66a5a;
+		}
+
+		ul li:hover:nth-child(4) a{
+		background: #e4405f;
+		}
+		ul li:hover:nth-child(4) a:before{
+		background: #d81c3f;
+		}
+		ul li:hover:nth-child(4) a:after{
+		background: #e46880;
+		}
+		.pink{
+			margin-bottom:-100rem;
+			height:100rem;
+			width:100%;
+			background-color:pink;
+			text-align:center;
+		}
+		.textintro h1{
+			font-size:6rem;
+			text-shadow:1rem 1rem black;
+		}
+		.col{
+			border-radius:20px;
+			border:10px solid white;
+			color:white;
+			text-shadow:1px 1px black;
+			width:100%;
+			height:20%;
+			font-size:4rem;
+			margin-left:8%;
+
+		}
+		.threeD a{
+			color:white;
+		}
+		.about{
+			font-size:2rem;
+			color:white;
+			word-spacing: 5px;
+			list-style: spacing 5px;
+			animation:5s;
+			opacity:0.1;
+			transition:2s;
+		}
+		.about:hover{
+			opacity:1;
+		}
+	</style>
+</head>
+<body>
+	<div class="overlay">
+		<div class="layer layer1">
+		</div>
+		<div class="layer layer2">
+			<br><br>W
+		</div>
+		<div class="layer layer3">
+			<br><br>E
+		</div>
+		<div class="layer layer4">
+			<br><br>L
+		</div>
+		<div class="layer layer5">
+			<br><br>C
+		</div>
+		<div class="layer layer6">
+			<br><br>O
+		</div>
+		<div class="layer layer7">
+			<br><br>M
+		</div>
+		<div class="layer layer8">
+			<br><br>E
+		</div>
+		<div class="layer layer9">
+		</div>
+	</div>
+
+	<script>
+		gsap.to('.layer1',{opacity:0,y:'-100vh',delay:.6});
+		gsap.to('.layer2',{opacity:0,y:'-100vh',delay:.7});
+		gsap.to('.layer3',{opacity:0,y:'-100vh',delay:.8});
+		gsap.to('.layer4',{opacity:0,y:'-100vh',delay:.9});
+		gsap.to('.layer5',{opacity:0,y:'-100vh',delay:1});
+		gsap.to('.layer6',{opacity:0,y:'-100vh',delay:.9});
+		gsap.to('.layer7',{opacity:0,y:'-100vh',delay:.8});
+		gsap.to('.layer8',{opacity:0,y:'-100vh',delay:.7});
+		gsap.to('.layer9',{opacity:0,y:'-100vh',delay:.6});
+	</script>
+
+    <div class="jumbotron jumbotron-fluid bg-transparent" id="pertama">
+        <div class="container text-white " style="padding-left:40%;margin-top:20%;">
+			<div class="textintro">
+				Hi! I am Edwin Fernaldy.
+				<h1>Front-end Developer</h1>
+				<br><br>
+				
+			</div>
+        </div>	
+    </div>
+	<script>
+		
+		gsap.fromTo("#pertama",{opacity:0},{opacity:1,duration:3,delay:1});
+		gsap.fromTo(".container",{opacity:0,x:-300},{opacity:1,x:0,delay:1.5,duration:3});
+	</script>
+	<div class="abu">
+		<br>
+	</div>
+	<div style="background-color: black;">
+		<div class="section1">
+			About
+		</div>
+	</div>
+
+	<script>
+	const tl = gsap.timeline({
+  		scrollTrigger: {
+    	trigger: ".section1",
+    	start: "center bottom",
+    	end: "center top",
+    	scrub: 1
+ 	 }
+	});
+		tl.fromTo(".abu",{opacity:0.95},{opacity:1,yPercent:-100,duration:10});
+		tl.fromTo("pertama",{opacity:1},{opacity:0});
+	</script>
+	<div class="container">
+		<br><br>
+		<br><br>
+	</div>
+
+	<div class="container">
+		<div class="about">
+			<br>
+			Based on Jakarta, Indonesia.
+			<br>
+			as time went on, I began to get experiences from various people I met. I learned that everyone can teach us a meaningful lesson. From experience I have learned to avoid mistakes while working, or do something else. I am the type of person who tries to meet your needs. 
+			Besides working on the website, I also open a small business and I like to do sports and travel.
+			<br><br>
+			<br><br>
+		</div>
+	</div>
+	<div class="container">
+		<br><br>
+		<br><br>
+		<br><br>
+	</div>
+
+
+
+	
+
+	<div class="pink">
+		<br>
+	</div>
+
+
+	<div id="trigger" style="background-color:pink;">
+    	<div class="section1" style="text-shadow:2px 2px black;">
+       	     Portfolio
+		</div>
+	</div>
+	
+	<script>
+		const tk = gsap.timeline({
+  		scrollTrigger: {
+    	trigger: "#trigger",
+    	start: "center bottom",
+    	end: "center top",
+    	scrub: 1
+ 	 	}
+		});
+		tk.fromTo(".pink",{opacity:0.95},{opacity:1,yPercent:-100,duration:10});
+		gsap.to(".section1",{scrollTrigger:".section1",x:300});
+	</script>
+
+
+	
+
+	
+
+
+    <div class="section2">
+		<div class="pro1" data-toggle="modal" data-target="#exampleModalCenter">
+			<!-- Modal -->
+			<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content bg-warning">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLongTitle">
+						<img src="Assets/unknown.png" style="max-width:100%;">
+					</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					</button>
+				</div>
+				<div class="modal-body">
+				KAUSA is built due to the alarming amount of plastic waste in Indonesia, threatening the welfare of this nation.
+
+				The said cause fosters a sense of determination to improve Indonesia and restore our homeland to its incomparable beauty, with the hope that there will be a big impact for all Indonesian, also to make the world see a future free of plastic waste.
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<a type="button" class="btn btn-primary" href="https://www.instagram.com/kausa.id/">Go to side ></a>
+				</div>
+				</div>
+			</div>
+			</div>
+		</div>
+		
+		<div class="pro2" data-toggle="modal" data-target="#exampleModalCenter1">
+			<!-- Modal -->
+			<div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content bg-info">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLongTitle">
+						<img src="Assets/unknown (1).png" style="max-width:100%;">
+
+					</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					</button>
+				</div>
+				<div class="modal-body">
+					cloudent is an app where student can keep their files online, and can share with other student as well.
+					
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				</div>
+				</div>
+			</div>
+			</div>
+		</div>
+
+		<div class="pro3" data-toggle="modal" data-target="#exampleModalCenter2">
+			<!-- Modal -->
+			<div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content bg-success">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLongTitle">
+						<img src="Assets/Screenshot (19).png" style="max-width:100%;">
+					</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					</button>
+				</div>
+				<div class="modal-body">
+				PT.Adi Mitra Solution (AmSol) founded in 30 Aprl 2015 as a company that places high value on the importance of having a good and solid organization behind the superior products it represents.
+				We understand that the needs of the increasing demand for fast and reliable supplier of engine powered by the excellent and efficient after-sales service is there, and because it directed itself to accept the challenge.
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<a type="button" class="btn btn-primary" href="http://amsol.co.id/">Go to side ></a>
+				</div>
+				</div>
+			</div>
+			</div>
+		</div>
+
+
+    </div>
+	
+	<div class="teks" id="trigger1" style="display:block;padding-bottom:10rem;">
+		
+		<div class="threeD">
+				want more? lets start working shall we?
+			</div>
+	</div>
+
+
+
+	<div class="item">
+		<br>
+	</div>
+	<div style="background-color:black;" > 
+		<div class="section1" id="prof" style="white-space:nowrap;">
+			Profile
+		</div>
+	</div>
+
+	<script>
+		const tm = gsap.timeline({
+  		scrollTrigger: {
+    	trigger: "#trigger1",
+    	start: "center bottom",
+    	end: "center top",
+    	scrub: 1
+ 	 	}
+		});
+		tm.fromTo(".threeD",{opacity:0},{opacity:1});
+		tm.fromTo(".item",{opacity:0.9},{opacity:1,yPercent:-100,duration:10});
+		TweenLite.to("#prof",1000,{x:-2000, scaleX:0.9, scaleY:0.9,repeat:-1});
+	</script>
+
+
+
+	<div class="container kotak" style="padding-bottom:15rem;" >
+    <div class="main-body">
+          <div class="row gutters-sm">
+            <div class="col-md-4 mb-3">
+              <div class="card bg-danger">
+                <div class="card-body">
+                  <div class="d-flex flex-column align-items-center text-center">
+                    <div class="mt-3">
+                      <img src="Assets/edwinduduk.jpg" id="fotoewin" style="max-width:100%">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card mt-3 bg-danger ">
+			  		<img src="Assets/edwinberdiri.jpg" id="fotoewin" style="max-width:100%">
+              </div>
+            </div>
+            <div class="col-md-8">
+              <div class="card mb-3 ">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Full Name</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      Edwin Fernaldy
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Email</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      edwinfernaldy@gmail.com
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Phone</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      082311016325
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row gutters-sm ">
+                <div class="col-sm-6 mb-3">
+                  <div class="card h-100">
+                    <div class="card-body">
+                      <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-success mr-2">My Skill</i></h6>
+                      <small>Web Design</small>
+                      <div class="progress mb-3" style="height: 5px">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                      <small>Laravel</small>
+                      <div class="progress mb-3" style="height: 5px">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 72%" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                      <small>Frontend </small>
+                      <div class="progress mb-3" style="height: 5px">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 89%" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                      <small>Mobile Template</small>
+                      <div class="progress mb-3" style="height: 5px">
+                        <div class="progress-bar bg-warning" role="progressbar" style="width: 30%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                      <small>Backend API</small>
+                      <div class="progress mb-3" style="height: 5px">
+                        <div class="progress-bar bg-warning" role="progressbar" style="width: 48%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+					  <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-primary mr-2">and more !</i></h6>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 mb-3" >
+                  <div class="card h-100">
+                    <div class="card-body">
+					<h6 class="d-flex align-items-center mb-3"><i class="material-icons text-primary mr-2">Info</i></h6>
+					<small>Currently Studying at BINUS University, and working at small company that makes website. Also opening small business such as Pristine(water), Automation, Mask, and much more.
+							looking forward to have business with you. hit me up !					
+					</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+				<div class="col-sm-6 mb-3">
+              	<div class="card h-100 bg-danger">
+                	<div class="card-body">
+					<img src="Assets/edwinnengok.jpg" id="fotoewin" style="max-width:100%">
+               	 </div>
+         	     </div>
+          		</div>
+              	</div>
+            </div>
+        </div>
+    </div>
+
+	<div class="teks" id="trigger2" style="display:block;padding-bottom:10rem;">
+		
+		<div class="threeD">
+			Thank you for scrolling this far !
+			</div>
+	</div>
+	
+	<div class="pink">
+		<br>
+	</div>
+    <section class="footer" id="futer">
+		<div class="col">
+			Hit Me Up !
+		</div>
+		<ul>
+			
+			<li>
+				<a href="https://www.linkedin.com/in/edwin-fernaldy-7404281b8/">
+				<span> - linkedin</span>
+				</a>
+			</li>
+			<li>
+				<a href="https://wa.link/sk9tdk">
+				<span> - Whatsapp</span>
+				</a>
+			</li>
+			<li>
+				<a href="mailto:edwinfernaldy@gmail.com">
+				<span> - Gmail </span>
+				</a>
+			</li>
+			<li>
+				<a href="https://www.instagram.com/edwinfernaldy/">
+				<span> - Instagram</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	
+	<div class="container">
+		<div class="threeD">
+			<a href=" ">&copy 2020 Edwin Fernaldy</a>
+		</div>
+	</div>
+
+	<script>
+		const t1 = gsap.timeline({
+  		scrollTrigger: {
+    	trigger: "#trigger2",
+    	start: "center bottom",
+    	end: "center top",
+    	scrub: 1
+ 	 	}
+		});
+		t1.fromTo(".threeD",{opacity:0},{opacity:1});
+		t1.to(".kotak",{opacity:0,duration:3});
+		t1.fromTo(".pink",{opacity:0.95},{opacity:1,yPercent:-50,duration:10});
+	</script>
+</body>
