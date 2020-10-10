@@ -167,6 +167,7 @@
 			border-radius:30%;
   			box-shadow: 15px 10px 20px gray;
 			background-image:url("Assets/amsol.jpg");
+			background-color:white;
 			background-size: contain;
     		background-repeat: no-repeat;
 			width:20rem;
@@ -365,6 +366,10 @@
 		.threeD a{
 			color:white;
 		}
+		.pos{
+			padding-left:40%;
+			margin-top:20%;
+		}
 		.about{
 			font-size:2rem;
 			color:white;
@@ -376,6 +381,85 @@
 		}
 		.about:hover{
 			opacity:1;
+		}
+
+		@media only screen and (max-width:500px) {
+			body{
+				overflow-x: hidden;
+			}
+			.layer{
+				padding-top:8rem;
+				font-size:2rem;
+			}
+			.section1{
+				margin-left:-15rem;
+				text-align:left;
+				font-size:2rem;
+				letter-spacing:1.5rem;
+			}
+			.abu{
+				height:55rem;
+				margin-bottom:-55rem;
+			}
+			.about{
+				font-size:1.2rem;
+			}
+			.pink{
+				height:50rem;
+				margin-bottom:-52rem;
+			}
+			.pos{
+				margin-left:-8rem;
+			}
+			.textintro h1{
+				margin-top:25rem;
+				font-size:4rem;
+			}
+			.textintro{
+				font-size:1rem;
+			}
+			.jumbotron{
+				background-position:-420px -280px;
+			}
+			.section2{
+				display:block;
+				padding-top:10rem;
+			}
+			.pro2{
+				margin-top:3rem;
+			}
+			.pro3{
+				margin-top:3rem;
+			}
+			.threeD{
+				font-size:1rem;
+			}
+			#prof{
+				margin-left:10rem;
+			}
+			.col{
+				font-size:1rem;
+				margin-left:0%;
+			}
+			ul{
+				display:block;
+				margin-top:70%;
+				margin-left:35%;
+			}
+			ul li{
+				margin-top:20%;
+			}
+			ul li a{
+				height:55px;
+				width:148px;
+				padding-left:7px;
+			}
+			.footer{
+				display:block;
+			}
+			#copyright{
+				margin-top:-5rem;
+			}
 		}
 	</style>
 </head>
@@ -421,7 +505,7 @@
 	</script>
 
     <div class="jumbotron jumbotron-fluid bg-transparent" id="pertama">
-        <div class="container text-white " style="padding-left:40%;margin-top:20%;">
+        <div class="container text-white pos" >
 			<div class="textintro">
 				Hi! I am Edwin Fernaldy.
 				<h1>Front-end Developer</h1>
@@ -571,7 +655,7 @@
 			<div class="modal-dialog modal-dialog-centered" role="document">
 				<div class="modal-content bg-success">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLongTitle">
+					<h5 class="modal-title" id="exampleModalLongTitle" style="background-color: white;">
 						<img src="Assets/Screenshot (19).png" style="max-width:100%;">
 					</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -740,7 +824,7 @@
 	</div>
     <section class="footer" id="futer">
 		<div class="col">
-			Hit Me Up !
+			Hit Me Up!
 		</div>
 		<ul>
 			
@@ -767,7 +851,7 @@
 		</ul>
 	</section>
 	
-	<div class="container">
+	<div class="container" id="copyright">
 		<div class="threeD">
 			<a href=" ">&copy 2020 Edwin Fernaldy</a>
 		</div>
