@@ -5,6 +5,7 @@ specifiers:
   '@types/react': 18.0.18
   '@types/react-dom': 18.0.6
   autoprefixer: ^10.4.8
+  clsx: ^1.2.1
   eslint: 8.23.0
   eslint-config-next: 12.2.5
   next: 12.2.5
@@ -16,6 +17,7 @@ specifiers:
 
 dependencies:
   autoprefixer: 10.4.8_postcss@8.4.16
+  clsx: 1.2.1
   next: 12.2.5_biqbaboplfbrettd7655fr4n2y
   postcss: 8.4.16
   react: 18.2.0
@@ -553,6 +555,11 @@ packages:
       readdirp: 3.6.0
     optionalDependencies:
       fsevents: 2.3.2
+    dev: false
+
+  /clsx/1.2.1:
+    resolution: {integrity: sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==}
+    engines: {node: '>=6'}
     dev: false
 
   /color-convert/2.0.1:
