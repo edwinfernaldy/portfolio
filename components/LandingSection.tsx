@@ -10,8 +10,10 @@ export default function LandingSection() {
       )}
     >
       <h1 className="xl:text-9xl text-2xl text-cyan-800 font-extrabold">
-        WEB DEVELOPER
+        WEBSITE DEVELOPER
       </h1>
+
+      <p>Edwin Fernaldy</p>
     </section>
   );
 }
