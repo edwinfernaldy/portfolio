@@ -19,8 +19,6 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-        <LoadingScreen />
-
         <Navbar />
 
         <LandingSection />
