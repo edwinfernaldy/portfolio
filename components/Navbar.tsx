@@ -12,12 +12,6 @@ export default function Navbar() {
       <a className="cursor-pointer hover:scale-125 transition-all duration-150">
         <p>Contact</p>
       </a>
-
-      <div className="absolute right-4 top-4">
-        <div className="hover:border transition-all duration-500 rounded-3xl border-white/20 hover:bg-white/5 cursor-pointer p-4">
-          &copy; 2022
-        </div>
-      </div>
     </div>
   );
 }
