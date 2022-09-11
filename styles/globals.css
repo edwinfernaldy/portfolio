@@ -11,11 +11,15 @@ body {
 }
 
 h1 {
-  font-family: "Caveat", serif;
+  font-family: "Abril Fatface", cursive;
 }
 
 p {
-  font-family: "Shadows Into Light", cursive;
+  font-family: "Righteous", cursive;
+}
+
+.font-neue {
+  font-family: "Bebas Neue", cursive;
 }
 
 a {

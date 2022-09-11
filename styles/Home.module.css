@@ -1,17 +1,9 @@
 .bgGradient {
-  background: rgb(192, 88, 87);
-  background: radial-gradient(
-    circle,
-    rgba(192, 88, 87, 1) 0%,
-    rgba(147, 66, 66, 1) 37%,
-    rgba(71, 28, 32, 1) 99%,
-    rgba(17, 0, 0, 1) 100%
-  );
-  background: rgb(238, 174, 202);
-  background: radial-gradient(
-    circle,
-    rgba(238, 174, 202, 1) 0%,
-    rgba(148, 187, 233, 1) 100%
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    198deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(47, 58, 70, 1) 66%
   );
 }
 .footer {
