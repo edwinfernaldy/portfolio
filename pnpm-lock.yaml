@@ -13,6 +13,7 @@ specifiers:
   postcss: ^8.4.16
   react: 18.2.0
   react-dom: 18.2.0
+  react-parallax-tilt: ^1.7.68
   react-scroll-parallax: ^3.3.1
   tailwindcss: ^3.1.8
   typescript: 4.8.2
@@ -25,6 +26,7 @@ dependencies:
   postcss: 8.4.16
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  react-parallax-tilt: 1.7.68_biqbaboplfbrettd7655fr4n2y
   react-scroll-parallax: 3.3.1_biqbaboplfbrettd7655fr4n2y
   tailwindcss: 3.1.8_postcss@8.4.16
 
@@ -1923,6 +1925,16 @@ packages:
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
     dev: true
+
+  /react-parallax-tilt/1.7.68_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-HDYxYrV8s/mu6Tm1uR+8qGGEvrblCmBEOJGxlUr6O1y0oDjhZ7d6oWr9SsqCvBU6iC/xz5b57kQy2zPeglkQ5Q==}
+    peerDependencies:
+      react: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
 
   /react-scroll-parallax/3.3.1_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-yduD41rowkw6tRDXEshWK2pV8MKUoc8Err2kRXe2lJEryJ5gFXqBNbuSJfaSZAWqnrkHM/ClKyaQ9AL1fHP5ow==}
