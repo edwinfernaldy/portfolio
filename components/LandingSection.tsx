@@ -6,36 +6,34 @@ import DevBooks from "/public/assets/photos/webdevbook.jpeg";
 
 export default function LandingSection() {
   return (
-    <section className='flex flex-col lg:flex-row p-5 h-screen items-center'>
-      <div className='flex flex-col gap-2 basis-1/2'>
-        <div className='relative h-1/2'>
+    <section className='flex flex-col lg:flex-row p-5 gap-2 max-h-screen overflow-hidden items-center'>
+      <div className='flex flex-col h-full justify-between flex-grow'>
+        <div className='relative'>
           <Image
-            className='object-cover aspect-square saturate-0'
+            className='object-cover saturate-0'
             src={DevBooks}
-            width={600}
-            height={400}
+            layout='responsive'
             alt='Background-image'
           />
         </div>
 
-        <div className='h-1/2 relative'>
+        <div className='relative'>
           <Image
-            className='object-cover aspect-square saturate-0'
+            className='object-cover saturate-0'
             src={DivingImage}
-            width={600}
-            height={400}
+            layout='responsive'
             alt='Background-image'
           />
         </div>
       </div>
 
-      <div className=' basis-1/2 flex flex-col lg:min-h-screen justify-between py-5'>
+      <div className='flex flex-col lg:min-h-screen justify-between'>
         <Jumbotron className='self-start xl:text-9xl font-bold pb-2 border-b border-gray-500'>
           PORTFOLIO
         </Jumbotron>
 
         <div>
-          <p>Edwin Fernaldy</p>
+          <p className='text-4xl'>Edwin Fernaldy</p>
 
           <p>Website Developer</p>
         </div>
