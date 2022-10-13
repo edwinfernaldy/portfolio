@@ -10,7 +10,7 @@ export default function Jumbotron(props: JumbotronProps) {
   const { children, className } = props;
   return (
     <h1
-      className={cn("text-4xl md:text-6xl lg:text-7xl xl:text-9xl", className)}
+      className={cn("text-4xl md:text-6xl lg:text-7xl xl:text-8xl", className)}
     >
       {children}
     </h1>
