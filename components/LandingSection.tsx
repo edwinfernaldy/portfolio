@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Parallax } from "react-scroll-parallax";
 import DivingImage from "/public/assets/photos/IMG_2727.jpeg";
 import Jumbotron from "./Jumbotron";
 import DevBooks from "/public/assets/photos/webdevbook.jpeg";
