@@ -1,23 +1,25 @@
 import Image from "next/image";
-import { ParallaxBanner } from "react-scroll-parallax";
-import MeetPhoto from "/public/assets/photos/IMG_2892.jpeg";
+import Jumbotron from "./Jumbotron";
+import Warpat from "/public/assets/photos/warpat.jpeg";
+import SingAlley from "/public/assets/photos/IMG_1459.jpg";
 
 export default function aboutSection() {
   return (
-    <section className='h-screen flex gap-1 p-5'>
-      <div className='w-full flex-grow'>
+    <section className='h-screen flex gap-1 p-5 overflow-hidden'>
+      <div className='relative w-full flex-grow h-full'>
         <Image
-          className='object-cover saturate-0'
-          src={MeetPhoto}
-          layout='responsive'
-          alt='Background-image'
+          className='saturate-0 h-full'
+          src={Warpat}
+          layout='fill'
+          objectFit='cover'
+          alt='close-up-me'
         />
       </div>
 
-      <div className='p-6'>
-        <h1 className='text-2xl mb-5'>About Me</h1>
+      <div className='p-6 flex flex-col gap-4'>
+        <Jumbotron className='mb-5 xl:text-7xl'>About Me</Jumbotron>
 
-        <div className='flex gap-2'>
+        <div className='flex flex-col md:flex-row gap-5'>
           <div>
             <h1 className='text-3xl'>Based on Tangerang, Indonesia.</h1>
 
@@ -38,10 +40,15 @@ export default function aboutSection() {
           </div>
         </div>
 
-        <ParallaxBanner
-          layers={[{ image: "/public/assets/photos/IMG_2727.jpeg", speed: 20 }]}
-          className='aspect-[2/1]'
-        />
+        <div className='relative h-full'>
+          <Image
+            layout='fill'
+            objectFit='cover'
+            className='h-full saturate-0'
+            src={SingAlley}
+            alt='me'
+          />
+        </div>
       </div>
     </section>
   );
