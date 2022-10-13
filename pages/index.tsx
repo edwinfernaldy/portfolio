@@ -19,11 +19,9 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-        <div className='lg:px-28 px-14'>
-          <LandingSection />
+        <LandingSection />
 
-          <AboutSection />
-        </div>
+        <AboutSection />
       </main>
     </>
   );
