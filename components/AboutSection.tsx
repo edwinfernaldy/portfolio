@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Jumbotron from "./Jumbotron";
-import Warpat from "/public/assets/photos/warpat.jpeg";
 import SingAlley from "/public/assets/photos/IMG_1459.jpg";
 
 export default function aboutSection() {
@@ -9,7 +8,7 @@ export default function aboutSection() {
       <div className='relative w-full flex-grow h-full'>
         <Image
           className='saturate-0 h-full'
-          src={Warpat}
+          src={SingAlley}
           layout='fill'
           objectFit='cover'
           alt='close-up-me'
