@@ -51,17 +51,7 @@ export default function aboutSection() {
           </p>
         </div>
 
-        <div className='flex items-start gap-2 h-full'>
-          <div className='relative w-full h-full'>
-            <Image
-              layout='fill'
-              objectFit='cover'
-              className='h-full saturate-0'
-              src={SingAlley}
-              alt='me'
-            />
-          </div>
-
+        <div className='flex items-start gap-1 h-full'>
           <div className='flex flex-col justify-between h-full'>
             <h1>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
@@ -90,6 +80,16 @@ export default function aboutSection() {
               autem! Odit ipsa vitae vero facere sed cupiditate temporibus sint
               ex repudiandae.
             </p>
+          </div>
+
+          <div className='relative w-full h-full'>
+            <Image
+              layout='fill'
+              objectFit='cover'
+              className='h-full saturate-0'
+              src={SingAlley}
+              alt='me'
+            />
           </div>
         </div>
       </div>
