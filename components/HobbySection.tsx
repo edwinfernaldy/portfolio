@@ -6,12 +6,11 @@ import Gaming from "/public/assets/photos/games.jpg";
 
 export default function HobbySection() {
   return (
-    <section className='flex flex-col gap-6 bg-black'>
+    <section className='flex flex-col gap-6 pb-6 bg-black'>
       <div className='relative h-max'>
-        <h1 className='absolute text-7xl md:text-8xl px-6 z-20 w-fit text-white'>
+        <h1 className='absolute text-xl md:text-8xl px-6 z-20 w-fit text-white'>
           &rsquo; Its just my thing.. &rsquo;
         </h1>
-        <div className='absolute w-full border border-black top-1/2 inset-x-0 z-0'></div>
       </div>
 
       <div className='relative h-[50vh]'>
