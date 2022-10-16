@@ -16,7 +16,7 @@ export default function HobbySection() {
       <div className='relative h-[50vh]'>
         <div className='absolute inset-0 z-0'>
           <Image
-            className='bg-fixed object-cover saturate-0'
+            className='bg-fixed object-cover saturate-0 blur-sm'
             src={Billiards}
             alt='pool-bg'
             layout='fill'
@@ -37,7 +37,7 @@ export default function HobbySection() {
       <div className='relative h-[50vh]'>
         <div className='absolute inset-0 z-0'>
           <Image
-            className='bg-fixed object-cover saturate-0'
+            className='bg-fixed object-cover saturate-0 blur-sm'
             src={Badminton}
             alt='pool-bg'
             layout='fill'
@@ -58,7 +58,7 @@ export default function HobbySection() {
       <div className='relative h-[50vh]'>
         <div className='absolute inset-0 z-0'>
           <Image
-            className='bg-fixed object-cover saturate-0'
+            className='bg-fixed object-cover saturate-0 blur-sm'
             src={Coding}
             alt='pool-bg'
             layout='fill'
@@ -79,7 +79,7 @@ export default function HobbySection() {
       <div className='relative h-[50vh]'>
         <div className='absolute inset-0 z-0'>
           <Image
-            className='bg-fixed object-cover saturate-0'
+            className='bg-fixed object-cover saturate-0 blur-sm'
             src={Gaming}
             alt='pool-bg'
             layout='fill'
