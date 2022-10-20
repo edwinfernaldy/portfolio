@@ -3,6 +3,7 @@ import Head from "next/head";
 import AboutSection from "../components/AboutSection";
 import HobbySection from "../components/HobbySection";
 import LandingSection from "../components/LandingSection";
+import WorksSection from "../components/WorksSection";
 
 const Home: NextPage = () => {
   return (
@@ -22,6 +23,8 @@ const Home: NextPage = () => {
         <AboutSection />
 
         <HobbySection />
+
+        <WorksSection />
       </main>
     </>
   );
