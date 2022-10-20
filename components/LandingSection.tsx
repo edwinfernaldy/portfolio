@@ -26,19 +26,15 @@ export default function LandingSection() {
         </div>
       </div>
 
-      <div className='flex flex-col lg:min-h-screen justify-between'>
+      <div className='flex flex-col h-full justify-center'>
         <Jumbotron className='self-start xl:text-9xl font-bold pb-2 border-b border-gray-500'>
           PORTFOLIO
         </Jumbotron>
 
-        <div>
+        <div className='text-right'>
           <p className='text-4xl'>Edwin Fernaldy</p>
 
           <p>Website Developer</p>
-        </div>
-
-        <div>
-          <p className='font-neue text-center'>Scroll down for more</p>
         </div>
       </div>
     </section>
