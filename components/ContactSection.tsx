@@ -8,6 +8,7 @@ export default function ContactSection() {
       <div className='flex justify-between'>
         <div className='flex flex-col gap-2 text-lg'>
           <a
+            className='hover:translate-x-5 transition-all'
             href='http://instagram.com/edwinfernaldy'
             target='_blank'
             rel='noreferrer'
@@ -16,6 +17,7 @@ export default function ContactSection() {
           </a>
 
           <a
+            className='hover:translate-x-5 transition-all'
             href='http://www.linkedin.com/in/edwin-fernaldy'
             target='_blank'
             rel='noreferrer'
@@ -24,6 +26,7 @@ export default function ContactSection() {
           </a>
 
           <a
+            className='hover:translate-x-5 transition-all'
             href='https://api.whatsapp.com/send?phone=6282311016325'
             target='_blank'
             rel='noreferrer'
@@ -31,13 +34,16 @@ export default function ContactSection() {
             <p>WhatsApp</p>
           </a>
 
-          <a href='mailto:edwinfernaldy@gmail.com?subject=INQUIRY ABOUT WEBSITES'>
+          <a
+            className='hover:translate-x-5 transition-all'
+            href='mailto:edwinfernaldy@gmail.com?subject=INQUIRY ABOUT WEBSITES'
+          >
             <p>E-mail</p>
           </a>
         </div>
 
-        <div className='self-end'>
-          <p className='underline underline-offset-1 hover:underline-offset-4 transition-transform duration-150 text-lg'>
+        <div className='self-end hidden md:block'>
+          <p className='hover:scale-125 transition-all duration-150 text-lg'>
             Download My Resume Here
           </p>
         </div>
