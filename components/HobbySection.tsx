@@ -8,7 +8,7 @@ export default function HobbySection() {
   return (
     <section className='flex flex-col gap-6 pb-6 bg-black'>
       <div className='relative h-max'>
-        <h1 className='absolute text-xl md:text-8xl px-6 z-20 w-fit text-white'>
+        <h1 className='absolute text-6xl sm:text-8xl px-6 z-20 w-fit text-white'>
           &rsquo; Its just my thing.. &rsquo;
         </h1>
       </div>
