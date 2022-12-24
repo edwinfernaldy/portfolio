@@ -11,8 +11,11 @@ export default function LandingSection() {
 
   return (
     <section className='flex flex-col lg:flex-row p-5 gap-2 h-screen overflow-hidden items-center'>
-      <div ref={op.ref} className='flex flex-col gap-2 flex-grow w-full h-full'>
-        <div className='relative h-1/2 overflow-hidden'>
+      <div
+        ref={op.ref}
+        className='flex flex-col gap-2 flex-grow w-full h-full order-2 lg:order-1'
+      >
+        <div className='relative h-1/2 overflow-hidden hidden lg:block'>
           <Image
             className='object-cover saturate-0 h-full'
             src={DevBooks}
@@ -31,7 +34,10 @@ export default function LandingSection() {
         </div>
       </div>
 
-      <div ref={scale.ref} className='flex flex-col h-full justify-center'>
+      <div
+        ref={scale.ref}
+        className='flex flex-col h-full justify-center order-1 lg:order-2'
+      >
         <Jumbotron className='self-start xl:text-9xl font-bold pb-2 border-b border-gray-500'>
           PORTFOLIO
         </Jumbotron>
