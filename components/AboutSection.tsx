@@ -6,7 +6,7 @@ import Guitaring from "/public/assets/photos/IMG_3204.jpeg";
 export default function aboutSection() {
   return (
     <section className='h-screen flex gap-1 p-5 overflow-hidden'>
-      <div className='relative w-full flex-grow h-full'>
+      <div className='relative w-full flex-grow h-full hidden lg:block'>
         <Image
           className='saturate-0 h-full'
           src={Guitaring}
@@ -52,36 +52,6 @@ export default function aboutSection() {
         </div>
 
         <div className='flex items-start gap-1 h-full'>
-          <div className='flex flex-col justify-between h-full'>
-            <h1>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
-              perferendis neque nihil corporis earum, libero qui et odit atque
-              ipsa praesentium perspiciatis aut vero dicta aspernatur sunt!
-              Iusto, hic nihil!
-            </h1>
-
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis
-              minima assumenda at, quis perferendis veritatis odit quam corrupti
-              autem! Odit ipsa vitae vero facere sed cupiditate temporibus sint
-              ex repudiandae.
-            </p>
-
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis
-              minima assumenda at, quis perferendis veritatis odit quam corrupti
-              autem! Odit ipsa vitae vero facere sed cupiditate temporibus sint
-              ex repudiandae.
-            </p>
-
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis
-              minima assumenda at, quis perferendis veritatis odit quam corrupti
-              autem! Odit ipsa vitae vero facere sed cupiditate temporibus sint
-              ex repudiandae.
-            </p>
-          </div>
-
           <div className='relative w-full h-full'>
             <Image
               layout='fill'
