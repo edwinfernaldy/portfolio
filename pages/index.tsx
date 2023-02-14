@@ -15,6 +15,8 @@ const Home: NextPage = () => {
           name='description'
           content='portfolio website of Edwin Fernaldy.'
         />
+        <meta name='keywords' content='HTML, CSS, JavaScript, Edwin Fernaldy' />
+        <meta name='author' content='Edwin Fernaldy' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
