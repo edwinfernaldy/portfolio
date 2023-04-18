@@ -8,7 +8,7 @@ interface ExpSubType {
 
 export default function ExpSub(props: ExpSubType) {
   return (
-    <div className={cn("w-1/4", props.className)}>
+    <div className={cn("w-1/4 self-center h-fit", props.className)}>
       <p>{props.children}</p>
     </div>
   );
