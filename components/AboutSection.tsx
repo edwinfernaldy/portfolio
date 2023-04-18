@@ -20,34 +20,39 @@ export default function aboutSection() {
         <Jumbotron className='mb-5 xl:text-7xl'>About Me</Jumbotron>
 
         <div className='flex flex-col md:flex-row gap-5'>
-          <div>
+          <div className='w-3/4'>
             <h1 className='text-3xl'>Based on Tangerang, Indonesia.</h1>
 
             <p>
               Im currently living in Tangerang, just finished my college
               majoring computer science program at Bina Nusantara University.
+              Got my bachelors degree at 2022, so here i am looking for an
+              opportunity to share my capabilites and of course to learn from
+              others.
             </p>
           </div>
 
-          <div>
-            <h1 className='text-3xl'>Been in this game since 2 years ago ..</h1>
+          <div className='w-full'>
+            <h1 className='text-3xl'>
+              <q>Flexible and Adaptive</q>
+            </h1>
             <p>
-              I have experience in different projects, with different methods
-              and frameworks. Mostly i do front-end at websites, but i do full
-              stack at some projects. Im currently loving to use typescript at
-              my latest project with netra.
+              I have implemented several frameworks, methods, and technologies
+              during my experience, the more knowledge I get the more I get
+              inspiration in solving problems. In my opinion, knowledge is all
+              that matters because world is growing relatively fast, if we dont
+              update our mind and capabilites we may struggled more than people
+              who work for it and learn from it, besides it doesn&lsquo;t hurt
+              to learn..
             </p>
           </div>
         </div>
 
         <div>
           <h1 className='text-3xl'>Thanks for the attention</h1>
-
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic aliquid
-            sed necessitatibus, dignissimos corrupti quaerat obcaecati. Ducimus
-            unde doloribus deleniti, numquam dolorem, doloremque, explicabo
-            eveniet quod perspiciatis voluptate quisquam nulla.
+            For those who viewing this website i hope we&lsquo;ll get in touch
+            and make something great together !!
           </p>
         </div>
 
