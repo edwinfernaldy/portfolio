@@ -25,8 +25,6 @@ const Home: NextPage = () => {
 
         <AboutSection />
 
-        <HobbySection />
-
         <WorksSection />
 
         <ContactSection />
