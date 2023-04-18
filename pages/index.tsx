@@ -4,6 +4,7 @@ import AboutSection from "../components/AboutSection";
 import ContactSection from "../components/ContactSection";
 import HobbySection from "../components/HobbySection";
 import LandingSection from "../components/LandingSection";
+import WelcomeOverlay from "../components/WelcomeOverlay";
 import WorksSection from "../components/WorksSection";
 
 const Home: NextPage = () => {
@@ -21,6 +22,8 @@ const Home: NextPage = () => {
       </Head>
 
       <main className='overflow-hidden'>
+        <WelcomeOverlay />
+
         <LandingSection />
 
         <AboutSection />
