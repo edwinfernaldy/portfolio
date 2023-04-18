@@ -7,5 +7,9 @@ interface ExpSubType {
 }
 
 export default function ExpSub(props: ExpSubType) {
-  return <div className={cn("w-1/4", props.className)}>{props.children}</div>;
+  return (
+    <div className={cn("w-1/4", props.className)}>
+      <p>{props.children}</p>
+    </div>
+  );
 }
