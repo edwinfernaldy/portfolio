@@ -3,6 +3,7 @@ import Image from "next/image";
 import Agit from "/public/logo_agit.png";
 import Avter from "/public/logo_avter.png";
 import Kausa from "/public/logo_kausa.png";
+import ExpCard from "./ExpCard";
 
 export default function WorksSection() {
   return (
@@ -15,12 +16,12 @@ export default function WorksSection() {
         <span className='absolute top-5 inset-x-0 border border-black w-full'></span>
       </div>
 
-      <div className='bg-black p-6 h-[25vh] w-full'>
+      <ExpCard color='black'>
         <Netra className='m-auto h-full' />
-      </div>
+      </ExpCard>
 
-      <div className='p-6 h-[25vh] w-full'>
-        <div className='relative h-full'>
+      <ExpCard>
+        <div className='relative h-full w-1/4'>
           <Image
             src={Agit}
             alt='logo_agit'
@@ -29,10 +30,10 @@ export default function WorksSection() {
             className='invert'
           />
         </div>
-      </div>
+      </ExpCard>
 
-      <div className='bg-black w-full p-6 h-[25vh]'>
-        <div className='relative h-full'>
+      <ExpCard color='black'>
+        <div className='relative h-full w-1/4'>
           <Image
             src={Kausa}
             alt='logo_kausa'
@@ -40,10 +41,10 @@ export default function WorksSection() {
             objectFit='contain'
           />
         </div>
-      </div>
+      </ExpCard>
 
-      <div className='p-6 w-full h-[25vh]'>
-        <div className='relative h-full'>
+      <ExpCard>
+        <div className='relative h-full w-1/4'>
           <Image
             src={Avter}
             alt='logo_avter'
@@ -52,7 +53,7 @@ export default function WorksSection() {
             className='invert'
           />
         </div>
-      </div>
+      </ExpCard>
     </section>
   );
 }
