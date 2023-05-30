@@ -8,7 +8,7 @@ export interface NetraLogoProps extends SVGProps<SVGSVGElement> {
 
 export default function Netra({ className, ...props }: NetraLogoProps) {
   return (
-    <Link href='/'>
+    <>
       <a>
         <svg
           xmlns='http://www.w3.org/2000/svg'
@@ -59,6 +59,6 @@ export default function Netra({ className, ...props }: NetraLogoProps) {
           </g>
         </svg>
       </a>
-    </Link>
+    </>
   );
 }
