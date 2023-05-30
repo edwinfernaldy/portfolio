@@ -6,6 +6,7 @@ import Avter from "/public/logo_avter.png";
 import Kausa from "/public/logo_kausa.png";
 import ExpCard from "./ExpCard";
 import ExpSub from "./ExpSub";
+import Dialog from "./Dialog";
 
 export default function WorksSection() {
   return (
@@ -24,64 +25,75 @@ export default function WorksSection() {
       </div>
 
       <ExpCard color='black'>
-        <Netra className='m-auto h-full' />
-
-        <ExpSub className='text-white'>
-          Develop Web3 Application for musician to share their royalty from
-          published songs. Focusing on Front-end, gathered data from blockchain{" "}
-          <i>(Ethereum Network)</i>.
-        </ExpSub>
+        <Dialog
+          title={"Netra"}
+          subtitle={
+            <ExpSub>
+              Develop Web3 Application for musician to share their royalty from
+              published songs. Focusing on Front-end, gathered data from
+              blockchain <i>(Ethereum Network)</i>.
+            </ExpSub>
+          }
+          button={<Netra className='m-auto h-full' />}
+        />
       </ExpCard>
 
       <ExpCard>
-        <ExpSub>
-          Develop 3 WebApp about data integration, cleansing, processing.
-          Contribute in several version webApp that serve different purpose of
-          data. Focusing on front-end, data visualization.
-        </ExpSub>
-
-        <div className='relative h-full w-1/4'>
-          <Image
-            src={Agit}
-            alt='logo_agit'
-            layout='fill'
-            objectFit='contain'
-            className='invert'
-          />
-        </div>
+        <Dialog
+          title={"PT. AstraGraphia Tbk (Agit)"}
+          subtitle={
+            <ExpSub>
+              Develop 3 WebApp about data integration, cleansing, processing.
+              Contribute in several version webApp that serve different purpose
+              of data. Focusing on front-end, data visualization.
+            </ExpSub>
+          }
+          button={
+            <Image
+              src={Agit}
+              alt='logo_agit'
+              width={300}
+              height={150}
+              className='invert'
+            />
+          }
+        />
       </ExpCard>
 
       <ExpCard color='black'>
-        <div className='relative h-full w-1/4'>
-          <Image
-            src={Kausa}
-            alt='logo_kausa'
-            layout='fill'
-            objectFit='contain'
-          />
-        </div>
-
-        <ExpSub className='text-white'>
-          Developed online shop WebApp, besides shopping the website has several
-          function like company profile, Blogs, Home, events.
-        </ExpSub>
+        <Dialog
+          title={"KAUSA INDONESIA"}
+          subtitle={
+            <ExpSub>
+              Developed online shop WebApp, besides shopping the website has
+              several function like company profile, Blogs, Home, events.
+            </ExpSub>
+          }
+          button={
+            <Image src={Kausa} alt='logo_kausa' width={200} height={200} />
+          }
+        />
       </ExpCard>
 
       <ExpCard>
-        <ExpSub>
-          Develop cargo online booking WebApp, Focusing on Front-end, utilizing
-          lots of bootstrap and php.
-        </ExpSub>
-
-        <div className='relative h-full w-1/4'>
-          <Image
-            src={Avter}
-            alt='logo_avter'
-            layout='fill'
-            objectFit='contain'
-            className='invert'
-          />
-        </div>
+        <Dialog
+          title={"AVTER"}
+          subtitle={
+            <ExpSub>
+              Develop cargo online booking WebApp, Focusing on Front-end,
+              utilizing lots of bootstrap and php.
+            </ExpSub>
+          }
+          button={
+            <Image
+              src={Avter}
+              alt='logo_avter'
+              width={300}
+              height={100}
+              className='invert'
+            />
+          }
+        />
       </ExpCard>
     </section>
   );
