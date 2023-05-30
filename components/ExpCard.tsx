@@ -11,7 +11,7 @@ export default function ExpCard(props: ExpCardType) {
     <div
       className={cn(
         props.color === "black" && "bg-black",
-        "w-full p-6 h-[50vh] flex justify-between gap-10"
+        "w-full p-6 h-[25vh] flex justify-center"
       )}
     >
       {props.children}
