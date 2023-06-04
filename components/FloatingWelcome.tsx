@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export default function FloatingWelcome() {
-  const visitors = "17134";
+  const visitors = "171888";
   const duration = "5";
   const [count, setCount] = useState("0");
 
