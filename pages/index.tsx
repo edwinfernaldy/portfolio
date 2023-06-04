@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import AboutSection from "../components/AboutSection";
 import ContactSection from "../components/ContactSection";
+import FloatingWelcome from "../components/FloatingWelcome";
 import HobbySection from "../components/HobbySection";
 import LandingSection from "../components/LandingSection";
 import WelcomeOverlay from "../components/WelcomeOverlay";
@@ -22,6 +23,8 @@ const Home: NextPage = () => {
       </Head>
 
       <main className='overflow-hidden'>
+        <FloatingWelcome />
+
         <WelcomeOverlay />
 
         <LandingSection />
