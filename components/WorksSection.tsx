@@ -28,11 +28,22 @@ export default function WorksSection() {
         <Dialog
           title={"Netra"}
           subtitle={
-            <ExpSub>
-              Develop Web3 Application for musician to share their royalty from
-              published songs. Focusing on Front-end, gathered data from
-              blockchain <i>(Ethereum Network)</i>.
-            </ExpSub>
+            <div className='space-y-2 mt-4'>
+              <div className='relative overflow-hidden h-64'>
+                <Image
+                  layout='fill'
+                  objectFit='contain'
+                  src={"/assets/photos/netraweb.png"}
+                  alt='netra-landing'
+                />
+              </div>
+
+              <ExpSub>
+                Develop Web3 Application for musician to share their royalty
+                from published songs. Focusing on Front-end, gathered data from
+                blockchain <i>(Ethereum Network)</i>.
+              </ExpSub>
+            </div>
           }
           button={<Netra className='m-auto h-full' />}
         />
@@ -42,11 +53,22 @@ export default function WorksSection() {
         <Dialog
           title={"PT. AstraGraphia Tbk (Agit)"}
           subtitle={
-            <ExpSub>
-              Develop 3 WebApp about data integration, cleansing, processing.
-              Contribute in several version webApp that serve different purpose
-              of data. Focusing on front-end, data visualization.
-            </ExpSub>
+            <div className='space-y-2 mt-4'>
+              <div className='relative overflow-hidden h-64'>
+                <Image
+                  layout='fill'
+                  objectFit='contain'
+                  src={"/assets/photos/agitweb.png"}
+                  alt='netra-landing'
+                />
+              </div>
+
+              <ExpSub>
+                Develop 3 WebApp about data integration, cleansing, processing.
+                Contribute in several version webApp that serve different
+                purpose of data. Focusing on front-end, data visualization.
+              </ExpSub>
+            </div>
           }
           button={
             <Image
@@ -64,10 +86,21 @@ export default function WorksSection() {
         <Dialog
           title={"KAUSA INDONESIA"}
           subtitle={
-            <ExpSub>
-              Developed online shop WebApp, besides shopping the website has
-              several function like company profile, Blogs, Home, events.
-            </ExpSub>
+            <div className='space-y-2 mt-4'>
+              <div className='relative overflow-hidden h-64'>
+                <Image
+                  layout='fill'
+                  objectFit='contain'
+                  src={"/assets/photos/kausa.jpeg"}
+                  alt='netra-landing'
+                />
+              </div>
+
+              <ExpSub>
+                Developed online shop WebApp, besides shopping the website has
+                several function like company profile, Blogs, Home, events.
+              </ExpSub>
+            </div>
           }
           button={
             <Image src={Kausa} alt='logo_kausa' width={200} height={200} />
@@ -79,10 +112,21 @@ export default function WorksSection() {
         <Dialog
           title={"AVTER"}
           subtitle={
-            <ExpSub>
-              Develop cargo online booking WebApp, Focusing on Front-end,
-              utilizing lots of bootstrap and php.
-            </ExpSub>
+            <div className='space-y-2 mt-4'>
+              <div className='relative overflow-hidden h-64'>
+                <Image
+                  layout='fill'
+                  objectFit='contain'
+                  src={"/assets/photos/avterweb.png"}
+                  alt='netra-landing'
+                />
+              </div>
+
+              <ExpSub>
+                Develop cargo online booking WebApp, Focusing on Front-end,
+                utilizing lots of bootstrap and php.
+              </ExpSub>
+            </div>
           }
           button={
             <Image
