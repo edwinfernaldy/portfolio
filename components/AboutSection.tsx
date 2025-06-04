@@ -1,100 +1,131 @@
 import Image from "next/image";
-import Jumbotron from "./Jumbotron";
-import SingAlley from "/public/assets/photos/IMG_1459.jpg";
-import Guitaring from "/public/assets/photos/IMG_3204.jpeg";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
-export default function aboutSection() {
+export default function AboutSection() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], ["20%", "-20%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+
   return (
-    <section className='h-screen flex gap-1 p-5 overflow-hidden'>
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1, transition: { duration: 2.5 } }}
-        className='relative w-full flex-grow h-full hidden lg:block'
-      >
-        <Image
-          className='saturate-0 h-full'
-          src={Guitaring}
-          layout='fill'
-          objectFit='cover'
-          alt='close-up-me'
-        />
-      </motion.div>
+    <section
+      ref={containerRef}
+      id='about'
+      className='relative py-24 md:py-32 overflow-hidden'
+    >
+      {/* Background Elements */}
+      <div className='absolute inset-0 pointer-events-none'>
+        <div className='absolute top-1/2 -left-1/4 w-[40rem] h-[40rem] bg-swiss-purple-600/10 rounded-full blur-3xl' />
+        <div className='absolute bottom-1/2 -right-1/4 w-[30rem] h-[30rem] bg-swiss-purple-400/10 rounded-full blur-3xl' />
+      </div>
 
-      <div className='px-6 flex flex-col gap-6'>
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{
-            opacity: 1,
-            transition: { duration: 1.5 }
-          }}
-        >
-          <Jumbotron className='mb-5 xl:text-7xl'>About Me</Jumbotron>
+      <div className='container mx-auto px-4 md:px-8 lg:px-12 relative z-10'>
+        <motion.div style={{ opacity }} className='max-w-7xl mx-auto'>
+          <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
+            {/* Left Column - Text */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className='space-y-8'
+            >
+              <div>
+                <h2 className='text-4xl md:text-5xl font-bold tracking-tighter mb-6 bg-clip-text text-transparent bg-gradient-to-r from-swiss-purple-400 to-swiss-purple-600'>
+                  About Me
+                </h2>
+                <div className='h-1 w-24 bg-gradient-to-r from-swiss-purple-400 to-swiss-purple-600 mb-8' />
+              </div>
+
+              <div className='space-y-6 text-swiss-gray-400'>
+                <p className='text-lg md:text-xl leading-relaxed'>
+                  I&apos;m a Full Stack Developer and Tech Lead with a passion
+                  for creating innovative solutions and leading high-performing
+                  teams. With over 8 years of experience in web development, I
+                  specialize in building scalable applications and mentoring
+                  developers.
+                </p>
+                <p className='text-lg md:text-xl leading-relaxed'>
+                  My approach combines technical expertise with strategic
+                  thinking, ensuring that every project not only meets but
+                  exceeds expectations. I believe in clean code, efficient
+                  solutions, and continuous learning.
+                </p>
+              </div>
+
+              {/* Skills Grid */}
+              <div className='grid grid-cols-2 gap-4'>
+                {[
+                  "React & Next.js",
+                  "Node.js & Express",
+                  "TypeScript",
+                  "GraphQL",
+                  "AWS & Cloud",
+                  "Team Leadership",
+                  "System Design",
+                  "Agile Methodologies"
+                ].map((skill, index) => (
+                  <motion.div
+                    key={skill}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className='p-4 rounded-lg bg-swiss-gray-900/50 backdrop-blur-sm border border-swiss-gray-800'
+                  >
+                    <p className='text-swiss-gray-300'>{skill}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Right Column - Images */}
+            <motion.div
+              style={{ y }}
+              className='relative aspect-square lg:aspect-auto lg:h-[600px]'
+            >
+              <div className='absolute inset-0 grid grid-cols-2 gap-4'>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.8 }}
+                  viewport={{ once: true }}
+                  className='relative overflow-hidden rounded-lg'
+                >
+                  <Image
+                    src='/assets/photos/IMG_2727.jpeg'
+                    layout='fill'
+                    objectFit='cover'
+                    className='saturate-0 hover:saturate-100 transition-all duration-500'
+                    alt='Diving Image'
+                  />
+                  <div className='absolute inset-0 bg-gradient-to-t from-swiss-gray-950/50 to-transparent' />
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  className='relative overflow-hidden rounded-lg'
+                >
+                  <Image
+                    src='/assets/photos/IMG_1459.jpg'
+                    layout='fill'
+                    objectFit='cover'
+                    className='saturate-0 hover:saturate-100 transition-all duration-500'
+                    alt='close up of me'
+                  />
+                  <div className='absolute inset-0 bg-gradient-to-t from-swiss-gray-950/50 to-transparent' />
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
         </motion.div>
-
-        <div className='flex flex-col md:flex-row gap-5'>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1, transition: { duration: 1.8 } }}
-            className='w-3/4'
-          >
-            <h1 className='text-3xl'>Based on Tangerang, Indonesia.</h1>
-
-            <p className='text-justify'>
-              Im currently living in Tangerang, just finished my college
-              majoring computer science program at Bina Nusantara University.
-              Got my bachelors degree at 2022, so here i am looking for an
-              opportunity to share my capabilites and of course to learn from
-              others.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1, transition: { duration: 1.2 } }}
-            className='w-full'
-          >
-            <h1 className='text-3xl'>
-              <q>Flexible and Adaptive</q>
-            </h1>
-            <p className='text-justify'>
-              I have implemented several frameworks, methods, and technologies
-              during my experience, the more knowledge I get the more I get
-              inspiration in solving problems. In my opinion, knowledge is all
-              that matters because world is growing relatively fast, if we dont
-              update our mind and capabilites we may struggled more than people
-              who work for it and learn from it, besides it doesn&lsquo;t hurt
-              to learn..
-            </p>
-          </motion.div>
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1, transition: { duration: 1.9 } }}
-        >
-          <h1 className='text-3xl'>Thanks for the attention</h1>
-          <p>
-            For those who viewing this website i hope we&lsquo;ll get in touch
-            and make something great together !!
-          </p>
-        </motion.div>
-
-        <div className='flex items-start gap-1 h-full'>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1, transition: { duration: 2.2 } }}
-            className='relative w-full h-full'
-          >
-            <Image
-              layout='fill'
-              objectFit='cover'
-              className='h-full saturate-0'
-              src={SingAlley}
-              alt='me'
-            />
-          </motion.div>
-        </div>
       </div>
     </section>
   );

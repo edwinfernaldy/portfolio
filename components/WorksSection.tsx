@@ -1,144 +1,135 @@
-import Netra from "./icons/Netra";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import Agit from "/public/logo_agit.png";
-import Avter from "/public/logo_avter.png";
-import Kausa from "/public/logo_kausa.png";
-import ExpCard from "./ExpCard";
-import ExpSub from "./ExpSub";
-import Dialog from "./Dialog";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+
+const projects = [
+  {
+    title: "Netra Web3 Decentralized Music Assets",
+    description: "A full-stack web3 application using React and NodeJS.",
+    image: "/assets/photos/netraweb.png",
+    tags: ["React", "Node.js", "TypeScript", "Solana", "GraphQL"]
+  },
+  {
+    title: "Jagawaktu Attendance Management System",
+    description:
+      "Attendance Management System built with NextJS and TailwindCSS.",
+    image: "/assets/photos/jagawaktu.png",
+    tags: [
+      "Next.js",
+      "Tailwind CSS",
+      "Framer Motion",
+      "PostgreSQL",
+      "Drizzle ORM"
+    ]
+  },
+  {
+    title: "Eprocurement System",
+    description: "Eprocurement System built with Laravel and VueJS.",
+    image: "/assets/photos/kangean.png",
+    tags: ["Laravel", "VueJS", "MySQL", "TailwindCSS", "Docker"]
+  }
+];
 
 export default function WorksSection() {
-  return (
-    <section className='pt-6 gap-2 flex flex-col'>
-      <div className='relative h-12'>
-        <motion.div
-          initial={{ x: 1000 }}
-          whileInView={{ x: 0, transition: { duration: 1.9 } }}
-          exit={{ x: 0 }}
-          className='absolute w-fit mx-6 bg-[#edeced] z-10'
-        >
-          <h1 className='text-5xl'>My Previous Works</h1>
-        </motion.div>
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
 
-        <span className='absolute top-5 inset-x-0 border border-black w-full'></span>
+  const y = useTransform(scrollYProgress, [0, 1], ["20%", "-20%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+
+  return (
+    <section
+      ref={containerRef}
+      id='works'
+      className='relative py-24 md:py-32 overflow-hidden'
+    >
+      {/* Background Elements */}
+      <div className='absolute inset-0 pointer-events-none'>
+        <div className='absolute top-1/2 -right-1/4 w-[40rem] h-[40rem] bg-swiss-purple-600/10 rounded-full blur-3xl' />
+        <div className='absolute bottom-1/2 -left-1/4 w-[30rem] h-[30rem] bg-swiss-purple-400/10 rounded-full blur-3xl' />
       </div>
 
-      <ExpCard color='black'>
-        <Dialog
-          title={"Netra"}
-          subtitle={
-            <div className='space-y-2 mt-4'>
-              <div className='relative overflow-hidden h-64'>
+      <div className='container mx-auto px-4 md:px-8 lg:px-12 relative z-10'>
+        <motion.div style={{ opacity }} className='max-w-7xl mx-auto'>
+          {/* Section Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className='text-center mb-16'
+          >
+            <h2 className='text-4xl md:text-5xl font-bold tracking-tighter mb-6 bg-clip-text text-transparent bg-gradient-to-r from-swiss-purple-400 to-swiss-purple-600'>
+              Latest Projects
+            </h2>
+            <div className='h-1 w-24 bg-gradient-to-r from-swiss-purple-400 to-swiss-purple-600 mx-auto mb-8' />
+            <p className='text-lg md:text-xl text-swiss-gray-400 max-w-2xl mx-auto'>
+              A collection of projects that showcase my expertise in web
+              development and design
+            </p>
+          </motion.div>
+
+          {/* Projects Grid */}
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+            {projects.map((project, index) => (
+              <motion.div
+                key={project.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+                viewport={{ once: true }}
+                className='group relative aspect-[4/3] overflow-hidden rounded-lg bg-swiss-gray-900/50 backdrop-blur-sm border border-swiss-gray-800'
+              >
                 <Image
+                  src={project.image}
                   layout='fill'
                   objectFit='contain'
-                  src={"/assets/photos/netraweb.png"}
-                  alt='netra-landing'
+                  className='saturate-100 transition-all duration-500'
+                  alt={project.title}
                 />
-              </div>
+                <div className='absolute inset-0 bg-gradient-to-t from-swiss-gray-950 via-swiss-gray-950/50 to-transparent opacity-0 group-hover:opacity-100 backdrop-blur-sm transition-opacity duration-500' />
+                <div className='absolute inset-0 p-6 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-500'>
+                  <h3 className='text-2xl font-bold mb-2 text-white'>
+                    {project.title}
+                  </h3>
+                  <p className='text-swiss-gray-300 mb-4'>
+                    {project.description}
+                  </p>
+                  <div className='flex flex-wrap gap-2'>
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className='px-3 py-1 text-sm bg-swiss-purple-400/20 text-swiss-purple-400 rounded-full'
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
 
-              <ExpSub>
-                Develop Web3 Application for musician to share their royalty
-                from published songs. Focusing on Front-end, gathered data from
-                blockchain <i>(Ethereum Network)</i>.
-              </ExpSub>
-            </div>
-          }
-          button={<Netra className='m-auto h-full' />}
-        />
-      </ExpCard>
-
-      <ExpCard>
-        <Dialog
-          title={"PT. AstraGraphia Tbk (Agit)"}
-          subtitle={
-            <div className='space-y-2 mt-4'>
-              <div className='relative overflow-hidden h-64'>
-                <Image
-                  layout='fill'
-                  objectFit='contain'
-                  src={"/assets/photos/agitweb.png"}
-                  alt='netra-landing'
-                />
-              </div>
-
-              <ExpSub>
-                Develop 3 WebApp about data integration, cleansing, processing.
-                Contribute in several version webApp that serve different
-                purpose of data. Focusing on front-end, data visualization.
-              </ExpSub>
-            </div>
-          }
-          button={
-            <Image
-              src={Agit}
-              alt='logo_agit'
-              width={300}
-              height={150}
-              className='invert'
-            />
-          }
-        />
-      </ExpCard>
-
-      <ExpCard color='black'>
-        <Dialog
-          title={"KAUSA INDONESIA"}
-          subtitle={
-            <div className='space-y-2 mt-4'>
-              <div className='relative overflow-hidden h-64'>
-                <Image
-                  layout='fill'
-                  objectFit='contain'
-                  src={"/assets/photos/kausa.jpeg"}
-                  alt='netra-landing'
-                />
-              </div>
-
-              <ExpSub>
-                Developed online shop WebApp, besides shopping the website has
-                several function like company profile, Blogs, Home, events.
-              </ExpSub>
-            </div>
-          }
-          button={
-            <Image src={Kausa} alt='logo_kausa' width={200} height={200} />
-          }
-        />
-      </ExpCard>
-
-      <ExpCard>
-        <Dialog
-          title={"AVTER"}
-          subtitle={
-            <div className='space-y-2 mt-4'>
-              <div className='relative overflow-hidden h-64'>
-                <Image
-                  layout='fill'
-                  objectFit='contain'
-                  src={"/assets/photos/avterweb.png"}
-                  alt='netra-landing'
-                />
-              </div>
-
-              <ExpSub>
-                Develop cargo online booking WebApp, Focusing on Front-end,
-                utilizing lots of bootstrap and php.
-              </ExpSub>
-            </div>
-          }
-          button={
-            <Image
-              src={Avter}
-              alt='logo_avter'
-              width={300}
-              height={100}
-              className='invert'
-            />
-          }
-        />
-      </ExpCard>
+          {/* View More Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            viewport={{ once: true }}
+            className='text-center mt-16'
+          >
+            <a
+              href='#contact'
+              className='inline-block px-8 py-4 bg-gradient-to-r from-swiss-purple-400 to-swiss-purple-600 text-white rounded-lg hover:opacity-90 transition-opacity'
+            >
+              View More Projects
+            </a>
+          </motion.div>
+        </motion.div>
+      </div>
     </section>
   );
 }
