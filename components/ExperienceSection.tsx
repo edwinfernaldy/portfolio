@@ -3,38 +3,26 @@ import { useRef } from "react";
 
 const experiences = [
   {
-    company: "WINUSA (PT. Winaldy Inter Nusa)",
-    role: "Founder & CEO",
-    timeline: "Sep 2023 - Present",
-    product:
-      "General supplier, IT solutions, internal tools and business systems",
-    technologies: ["Next.js", "Node.js", "Laravel"],
-    notes: [
-      "Leading operations, client relationships, and digital product strategy",
-      "Managing a team of developers and business analysts",
-      "Overseeing multiple client projects and internal tools development",
-      "Driving business growth and technical innovation"
-    ]
-  },
-  {
-    company: "Netra",
+    company: "Netra - Artist Booking Platform",
     role: "Full-Stack Developer",
-    timeline: "Dec 2024 - Present",
-    product: "Decentralized platform for fractional music ownership",
+    timeline: "March 2022 - Present",
+    product: "Artist Booking Platform using AI LLM (Large Language Model)",
     technologies: [
       "Next.js",
       "Tailwind CSS",
       "Drizzle ORM",
       "Xendit API",
-      "MetaMask",
-      "Wagmi",
-      "GraphQL"
+      "TypeScript",
+      "URQL",
+      "AI LLM",
+      "GPT Model",
+      "AI Agent Toolkit",
+      "Kimi AI Model",
     ],
     notes: [
-      "Built end-to-end Web3 app for music asset interaction and payments",
-      "Implemented blockchain integration for music ownership",
-      "Developed secure payment processing system",
-      "Created responsive and intuitive user interface"
+      "Implemented secure booking process using AI LLM (Large Language Model)",
+      "Created responsive and intuitive user interface with modern design patterns",
+      "Utilizing AI LLM to handle booking process and generate booking details",
     ]
   },
   {
@@ -78,21 +66,23 @@ const experiences = [
   },
   {
     company: "PT. Adi Mitra Solusi",
-    role: "Web Developer & Expeditor",
+    role: "General Manager",
     timeline: "Apr 2021 - May 2023",
     product: "Company profile website and logistics support tools",
     technologies: ["Next.js", "Framer Motion", "Parallax Scrolling"],
     notes: [
+      "Led overall company operations and strategic planning",
+      "Managed cross-functional teams and business development initiatives",
       "Built company website with modern design and animations",
-      "Supported shipping and inventory processes",
+      "Oversaw shipping and inventory processes optimization",
       "Developed internal tools for logistics management",
       "Created responsive and interactive user interfaces"
     ]
   },
   {
-    company: "Netra",
+    company: "Netra - Fractional Music Ownership",
     role: "Front-End Developer",
-    timeline: "Mar 2022 - Nov 2022",
+    timeline: "Mar 2022 - Present",
     product: "Blockchain music ownership and Web3 interaction",
     technologies: [
       "Next.js",
